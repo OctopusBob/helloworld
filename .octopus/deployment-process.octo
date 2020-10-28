@@ -13,7 +13,7 @@ steps "Hello World" {
             Octopus_Action_RunOnServer = "true"
             Octopus_Action_Script_ScriptSource = "Inline"
             Octopus_Action_Script_Syntax = "PowerShell"
-            Octopus_Action_Script_ScriptBody = "Write-Host \"Hello World!\""
+            Octopus_Action_Script_ScriptBody = "Write-Host \"Hello World!  Something!\""
         }
     }
 }
