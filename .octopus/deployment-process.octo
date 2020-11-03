@@ -1,13 +1,7 @@
 steps "Hello World" {
-    condition = "Success"
-    package_requirement = "LetOctopusDecide"
-    start_trigger = "StartAfterPrevious"
 
     actions "Hello World" {
         action_type = "Octopus.Script"
-        condition = "Success"
-        is_disabled = false
-        is_required = false
 
         properties {
             Octopus_Action_RunOnServer = "true"
@@ -18,16 +12,10 @@ steps "Hello World" {
     }
 }
 
-steps "Run a Script" {
-    condition = "Success"
-    package_requirement = "LetOctopusDecide"
-    start_trigger = "StartAfterPrevious"
+steps "Hello World Part Deux" {
 
-    actions "Run a Script" {
+    actions "Hello World Part Deux" {
         action_type = "Octopus.Script"
-        condition = "Success"
-        is_disabled = false
-        is_required = false
 
         properties {
             Octopus_Action_RunOnServer = "true"
