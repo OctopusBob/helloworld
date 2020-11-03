@@ -25,3 +25,26 @@ steps "Hello World Part Deux" {
         }
     }
 }
+
+steps "Hello Person Name" {
+
+    actions "Hello Person Name" {
+        action_type = "Octopus.Script"
+        notes = "Using variables and roles in a greeting"
+        worker_pool_variable = ""
+
+        properties {
+            Octopus_Action_RunOnServer = "false"
+            Octopus_Action_Script_ScriptSource = "Inline"
+            Octopus_Action_Script_Syntax = "PowerShell"
+            Octopus_Action_Script_ScriptBody = <<-EOT
+                    $greeting = $OctopusParameters["Project.Environment.Greeting"]
+                    Write-Host $greeting
+                EOT
+        }
+    }
+
+    properties {
+        Octopus_Action_TargetRoles = "hello-world-cloud-region"
+    }
+}
