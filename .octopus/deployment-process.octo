@@ -49,3 +49,20 @@ steps "Hello Person Name" {
         Octopus_Action_TargetRoles = "hello-world-cloud-region"
     }
 }
+
+steps "Step Template" {
+
+    actions "Step Template" {
+        action_type = "Octopus.Script"
+        worker_pool_id_or_name = "Hello World Worker Pool"
+
+        properties {
+            Octopus_Action_Script_ScriptSource = "Inline"
+            Octopus_Action_Script_Syntax = "PowerShell"
+            Octopus_Action_Script_ScriptBody = "Write-Host \"Hello World!\""
+            Octopus_Action_Template_Id = "ActionTemplates-1"
+            Octopus_Action_Template_Version = "0"
+            Octopus_Action_RunOnServer = "true"
+        }
+    }
+}
