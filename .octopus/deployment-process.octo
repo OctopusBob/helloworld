@@ -2,6 +2,7 @@ steps "Hello World" {
 
     actions "Hello World" {
         action_type = "Octopus.Script"
+        worker_pool_variable = "Project.Worker.Pool"
 
         properties {
             Octopus_Action_RunOnServer = "true"
