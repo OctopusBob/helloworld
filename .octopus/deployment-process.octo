@@ -41,6 +41,8 @@ steps "Hello Person Name" {
             Octopus_Action_Script_ScriptBody = <<-EOT
                     $greeting = $OctopusParameters["Project.Environment.Greeting"]
                     Write-Host $greeting
+                    
+                    Write-Host "Hello!"
                 EOT
         }
     }
