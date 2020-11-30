@@ -10,6 +10,6 @@ steps "Hello World" {
             Octopus.Action.Script.Syntax = "PowerShell"
         }
 
-        worker_pool_id_or_name = "WorkerPools-1"
+        worker_pool_variable = "Project.Worker.Pool"
     }
 }
