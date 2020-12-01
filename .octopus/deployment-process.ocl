@@ -1,6 +1,6 @@
-steps "Hello World" {
+steps "Hello from a worker" {
 
-    actions "Hello World" {
+    actions "Hello from a worker" {
         action_type = "Octopus.Script"
         notes = "Simple script which prints hello world on the default worker"
         properties = {
@@ -14,36 +14,17 @@ steps "Hello World" {
     }
 }
 
-steps "Hello on a target" {
+steps "Hello from a target" {
     properties = {
         Octopus.Action.TargetRoles = "hello-world-cloud-region"
     }
 
 
-    actions "Hello on a target" {
+    actions "Hello from a target" {
         action_type = "Octopus.Script"
         properties = {
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Script.ScriptBody = "Write-Host \"Hello world from a target!\""
-            Octopus.Action.Script.ScriptSource = "Inline"
-            Octopus.Action.Script.Syntax = "PowerShell"
-        }
-
-        worker_pool_variable = ""
-    }
-}
-
-steps "Webinar Script" {
-    properties = {
-        Octopus.Action.TargetRoles = "hello-world-cloud-region"
-    }
-
-
-    actions "Webinar Script" {
-        action_type = "Octopus.Script"
-        properties = {
-            Octopus.Action.RunOnServer = "false"
-            Octopus.Action.Script.ScriptBody = "Write-Host \"Hello World!\""
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
