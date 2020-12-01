@@ -32,3 +32,22 @@ steps "Hello on a target" {
         worker_pool_variable = ""
     }
 }
+
+steps "Webinar Script" {
+    properties = {
+        Octopus.Action.TargetRoles = "hello-world-cloud-region"
+    }
+
+
+    actions "Webinar Script" {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Script.ScriptBody = "Write-Host \"hello world!\""
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+
+        worker_pool_variable = ""
+    }
+}
