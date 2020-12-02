@@ -32,3 +32,18 @@ steps "Hello from a target" {
         worker_pool_variable = ""
     }
 }
+
+steps "Webinar Branch" {
+
+    actions "Webinar Branch" {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.RunOnServer = "true"
+            Octopus.Action.Script.ScriptBody = "write-host \"hello world!\""
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+
+        worker_pool_id_or_name = "Default Worker Pool"
+    }
+}
