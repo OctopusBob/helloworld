@@ -39,7 +39,7 @@ steps "Webinar Branch" {
         action_type = "Octopus.Script"
         properties = {
             Octopus.Action.RunOnServer = "true"
-            Octopus.Action.Script.ScriptBody = "write-host \"hello world!\""
+            Octopus.Action.Script.ScriptBody = "Write-Host \"Hello World from GitHub editor!\""
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
